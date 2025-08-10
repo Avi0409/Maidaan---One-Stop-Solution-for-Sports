@@ -7,7 +7,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
+import Venues from "./pages/Venues";
 import BookNow from "./pages/BookNow";
+import ListYourSports from "./pages/ListYourSports";
 import FindPlayers from "./pages/FindPlayers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -28,7 +30,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<AboutUs />} />
+              <Route path="/venues" element={<Venues />} />
               <Route path="/book-now" element={<BookNow />} />
+              <Route path="/list-your-sports" element={<ListYourSports />} />
               <Route path="/find-players" element={<FindPlayers />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

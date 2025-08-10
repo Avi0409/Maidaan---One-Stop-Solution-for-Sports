@@ -11,7 +11,11 @@ import {
   Globe,
   MapPin,
   Users,
-  Calendar
+  Calendar,
+  Plus,
+  LogIn,
+  UserPlus,
+  Building
 } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -51,7 +55,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link 
               to="/about" 
               className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
@@ -60,19 +64,30 @@ const Header = () => {
               <span>{t('aboutUs')}</span>
             </Link>
             <Link 
-              to="/book-now" 
-              className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>{t('bookNow')}</span>
-            </Link>
-            <Link 
-              to="/find-players" 
+              to="/venues" 
               className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
             >
               <MapPin className="w-4 h-4" />
-              <span>{t('findPlayersNearby')}</span>
+              <span>{t('exploreVenues')}</span>
             </Link>
+            <Link 
+              to="/list-your-sports" 
+              className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Building className="w-4 h-4" />
+              <span>{t('listYourSports')}</span>
+            </Link>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="flex items-center space-x-1"
+              asChild
+            >
+              <Link to="/find-players">
+                <Plus className="w-4 h-4" />
+                <span>{t('postGameInvite')}</span>
+              </Link>
+            </Button>
           </nav>
 
           {/* Search Bar */}
@@ -89,14 +104,41 @@ const Header = () => {
             </div>
           </form>
 
-          {/* Theme & Language Controls */}
+          {/* User Actions & Controls */}
           <div className="flex items-center space-x-2">
+            {/* Login/Signup for Desktop */}
+            <div className="hidden md:flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="flex items-center space-x-1 hover-glow"
+                asChild
+              >
+                <Link to="/login">
+                  <LogIn className="w-4 h-4" />
+                  <span>{t('login')}</span>
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex items-center space-x-1 hover-glow"
+                asChild
+              >
+                <Link to="/signup">
+                  <UserPlus className="w-4 h-4" />
+                  <span>{t('signUp')}</span>
+                </Link>
+              </Button>
+            </div>
+
+            {/* Theme & Language Controls */}
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
               className="hover-glow"
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              aria-label={t('toggleTheme')}
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
@@ -106,7 +148,7 @@ const Header = () => {
               size="sm"
               onClick={toggleLanguage}
               className="hover-glow"
-              aria-label={`Switch to ${language === 'en' ? 'Hindi' : 'English'}`}
+              aria-label={t('toggleLanguage')}
             >
               <Globe className="w-4 h-4" />
               <span className="ml-1 text-xs">{language.toUpperCase()}</span>
@@ -118,7 +160,7 @@ const Header = () => {
               size="sm"
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={t('toggleMenu')}
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -154,21 +196,49 @@ const Header = () => {
                   <span>{t('aboutUs')}</span>
                 </Link>
                 <Link 
-                  to="/book-now" 
+                  to="/venues" 
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>{t('bookNow')}</span>
+                  <MapPin className="w-4 h-4" />
+                  <span>{t('exploreVenues')}</span>
+                </Link>
+                <Link 
+                  to="/list-your-sports" 
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Building className="w-4 h-4" />
+                  <span>{t('listYourSports')}</span>
                 </Link>
                 <Link 
                   to="/find-players" 
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <MapPin className="w-4 h-4" />
-                  <span>{t('findPlayersNearby')}</span>
+                  <Plus className="w-4 h-4" />
+                  <span>{t('postGameInvite')}</span>
                 </Link>
+                
+                {/* Mobile Login/Signup */}
+                <div className="border-t border-border pt-2 mt-2">
+                  <Link 
+                    to="/login" 
+                    className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <LogIn className="w-4 h-4" />
+                    <span>{t('login')}</span>
+                  </Link>
+                  <Link 
+                    to="/signup" 
+                    className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <UserPlus className="w-4 h-4" />
+                    <span>{t('signUp')}</span>
+                  </Link>
+                </div>
               </nav>
             </div>
           </div>

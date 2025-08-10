@@ -119,7 +119,7 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-display mb-6 neon-glow">Choose Your Sport</h2>
+            <h2 className="text-display mb-6 neon-glow">{t('chooseYourSport')}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Select from our wide range of sports and find the perfect venue for your game
             </p>
