@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maidaan — Internal / Hidden Page</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070707;
+      --panel: rgba(255,255,255,0.03);
+      --neon1: #00ffd1;
+      --neon2: #ff2bd6;
+      --muted: #bfc9bf;
+      --glass: rgba(255,255,255,0.04);
+      --card-radius: 14px;
+      --maxw: 1100px;
+    }
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --panel: rgba(0,0,0,0.03);
+      --neon1: #007a4d;
+      --neon2: #b33a78;
+      --muted: #333333;
+      --glass: rgba(0,0,0,0.04);
+    }
+
+    html,body { height:100%; margin:0; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%); color:var(--muted); }
+    .wrap { max-width:var(--maxw); margin:28px auto; padding:28px; }
+    .card { background:var(--panel); border-radius:var(--card-radius); padding:18px; border:1px solid var(--glass); box-shadow: 0 8px 30px rgba(0,0,0,0.6); margin-bottom:18px; }
+    h1 { margin:0 0 8px 0; font-size:1.8rem; color:var(--neon1); text-shadow: 0 0 18px rgba(0,255,209,0.06); }
+    h2 { margin:16px 0 8px; color:var(--neon2); font-size:1.15rem; }
+    h3 { margin:12px 0 6px; color:var(--neon1); font-size:1rem; }
+    p { margin:8px 0; line-height:1.5; color:var(--muted); }
+    ul { margin:8px 0 12px 20px; color:var(--muted); }
+    .small { font-size:0.95rem; color:var(--muted); }
+    code { background:rgba(255,255,255,0.02); padding:4px 6px; border-radius:6px; color:#fff; font-size:0.95rem; }
+
+    .two-col { display:flex; gap:16px; }
+    .two-col > .card { flex:1; }
+
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:linear-gradient(90deg,var(--neon1),var(--neon2)); color:#041b15; font-weight:700; }
+
+    .muted-note { font-size:0.92rem; color:#9aa79a; margin-top:8px; }
+
+    /* team grid */
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px; }
+    .member { text-align:center; padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--glass); }
+    .avatar { width:84px; height:84px; border-radius:50%; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-weight:800; background:linear-gradient(90deg,var(--neon1),var(--neon2)); color:#041b15; }
+
+    /* code block */
+    pre { background:rgba(0,0,0,0.3); color:#e6ffe9; padding:12px; border-radius:8px; overflow:auto; font-size:0.9rem; }
+
+    /* responsive */
+    @media (max-width:900px) {
+      .two-col { flex-direction:column; }
+    }
+
+    .foot { margin-top:14px; font-size:0.88rem; color:#9aa79a; }
+    .confidential { margin-top:12px; color:#c9b8ff; font-size:0.9rem; }
+
+    /* link */
+    a { color:var(--neon1); text-decoration:underline; }
+    .note { background:rgba(255,255,255,0.02); padding:10px; border-radius:8px; border:1px dashed rgba(255,255,255,0.03); }
+
+  </style>
+</head>
+<body>
+  <div class="wrap card" id="content" role="main" aria-live="polite" aria-labelledby="pageTitle" hidden>
+    <h1 id="pageTitle">Maidaan — Hidden Internal Overview</h1>
+    <p class="small">Private internal page. Contains product vision, technical notes, UX flows and comparisons. Do not publish publicly. (Password-protected.)</p>
+
+    <section class="card" aria-labelledby="philosophy">
+      <h2 id="philosophy">Our Philosophy</h2>
+      <p>Maidaan is built around three simple beliefs: <strong>play is social</strong>, <strong>access should be simple</strong>, and <strong>pricing should be transparent</strong>. We aim to make it effortless for people to find venues, assemble players and play — without friction, hidden fees, or confusing booking flows. Our design focuses on human connection: discover local games, meet people nearby, and make sports a regular part of community life.</p>
+      <p class="muted-note"><strong>Design principle:</strong> small micro-interactions (hover glow, tactile buttons), accessible typography (Inter), and a neon-dark theme for energy while offering a light mode for daylight use.</p>
+    </section>
+
+    <section class="card" aria-labelledby="goal">
+      <h2 id="goal">Our Goal</h2>
+      <ul>
+        <li>Make venue discovery & booking as fast as ordering food.</li>
+        <li>Enable players (solo or partial teams) to find each other, post quick invites and join games instantly.</li>
+        <li>Provide turf owners with easy onboarding and a simple dashboard to manage availability, prices and bookings.</li>
+        <li>Keep pricing transparent — no hidden fees — while enabling low-friction secure payments.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="purpose">
+      <h2 id="purpose">Project purpose & target audience</h2>
+      <p><strong>Purpose:</strong> Provide a single place for sport players and venue owners to meet, book and play. Reduce friction in last-minute game formation and make small group sports social & recurring.</p>
+      <p><strong>Primary users:</strong> casual players (students/professionals), solo players seeking games, amateur teams, turf owners and managers, local coaches.</p>
+    </section>
+
+    <section class="card" aria-labelledby="features">
+      <h2 id="features">Core features (detailed)</h2>
+      <h3>Search & Discovery</h3>
+      <ul>
+        <li>Search by sport, location and availability (today, morning, evening).</li>
+        <li>Filters: surface (grass/clay/hard), indoor/outdoor, lighting, equipment rental, coaching available, parking.</li>
+      </ul>
+
+      <h3>Book Now (UX)</h3>
+      <ul>
+        <li>Venue listing card: photos carousel, summary, price per hour, quick "Book Now" and "Find Players".</li>
+        <li>Click "Book Now" → opens detailed venue page in <em>new tab</em> containing: gallery, detailed amenities, embedded Google Maps, share button, available time slots and a booking panel (select sport if multi-use, date, start time, duration).</li>
+        <li>Booking panel adds selection to an on-page <strong>cart</strong> (side panel) — user confirms payment there. Cart persists during session.</li>
+      </ul>
+
+      <h3>Find Players</h3>
+      <ul>
+        <li>Post-your-game flow: "+ Post Your Game Invite" opens modal that asks: sport (dropdown incl. Squash & Pickleball), date & time, number of players required, optional venue, short message.</li>
+        <li>Invite appears instantly in "Game Invites" feed (no page reload) with Join & Chat actions.</li>
+        <li>Join button: sends a join request notification to the poster & toggles to "Request Sent".</li>
+        <li>Chat: lightweight chat modal per session. Real-time via WebSockets/Firebase or fallback to polling/localStorage for demo mode.</li>
+      </ul>
+
+      <h3>Spotify integration</h3>
+      <p>Embed Spotify playlists on Booking/venue pages so players can tune-in while playing. Playlist is optional and togglable by user (autoplay muted by default).</p>
+
+      <h3>Admin / Turf Owner</h3>
+      <ul>
+        <li>Turf onboarding page: form + photo uploader + request-a-demo button.</li>
+        <li>Owner dashboard: availability calendar, price management, booking list, payout & feedback.</li>
+      </ul>
+
+      <h3>Accessibility & Localization</h3>
+      <ul>
+        <li>Inter font, ARIA labels, keyboard-friendly focus outlines, alt-text for images.</li>
+        <li>Language toggle (EN / HI) — UI copy switched via a small dictionary; keep translations minimal to start and expand content later.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="how-it-works">
+      <h2 id="how-it-works">How it works — end-to-end flows</h2>
+
+      <h3>1) Booking flow (user)</h3>
+      <ol>
+        <li>User finds venue via search or sport tile → clicks venue card → opens detailed venue page in new tab.</li>
+        <li>User selects sport (if multi), date, start time, duration — availability validated in real-time.</li>
+        <li>Selection added to the cart panel on the same page. User can add multiple slots or venues.</li>
+        <li>Checkout → payment gateway (Stripe/Razorpay) integration — after success, booking confirmation email & in-app booking record.</li>
+      </ol>
+
+      <h3>2) Post & join game (players)</h3>
+      <ol>
+        <li>Post: user clicks "+ Post Your Game Invite" → fills sport, time, players needed, optional venue → submit.</li>
+        <li>Invite shown in feed. Other users click "Join" → sends join request to poster (in-app notification + optional email/SMS).</li>
+        <li>Poster accepts or rejects requests via a small management UI (accept triggers confirmation message & updates joined count).</li>
+        <li>Chat: per-invite chat modal preserves messages; real-time via WebSocket/Firebase recommended for production.</li>
+      </ol>
+
+      <h3>3) Turf owner onboarding</h3>
+      <p>Turf owners click "List your turf" → fill the registration form (photos, pricing, amenities, slot rules). They can request a demo. After verification, listing goes live and owner gets a simple dashboard to manage bookings.</p>
+    </section>
+
+    <section class="card" aria-labelledby="technical">
+      <h2 id="technical">Technical architecture & developer notes</h2>
+
+      <h3>Frontend</h3>
+      <ul>
+        <li>Static HTML/CSS/JS — directly runnable in VS Code. Use modular files: <code>index.html</code>, <code>styles.css</code>, <code>app.js</code>.</li>
+        <li>Light/Dark mode: CSS variables, auto-detect via <code>prefers-color-scheme</code>, toggle to override.</li>
+        <li>Localization: simple JS dictionary for UI strings; expand to JSON per language.</li>
+        <li>Accessibility: use ARIA attributes, alt text for images, and maintain 4.5:1 contrast for readable text.</li>
+      </ul>
+
+      <h3>Realtime & backend (recommended)</h3>
+      <ul>
+        <li>Session posting / chat / join requests — use a backend API and real-time layer: options:
+          <ul>
+            <li><strong>Firebase Realtime DB / Firestore + Auth</strong> — fastest to prototype real-time chat and simple auth.</li>
+            <li><strong>Node.js + Socket.IO</strong> — good if you want control and a REST API (booking, payments).</li>
+          </ul>
+        </li>
+        <li>Bookings: REST endpoints to confirm availability, create booking with idempotency key, then call payment gateway server-side to capture funds.</li>
+        <li>Data model (example): <code>venues</code>, <code>bookings</code>, <code>sessions</code> (game invites), <code>users</code>, <code>messages</code>.</li>
+      </ul>
+
+      <h3>Demo-only (client-only) notes</h3>
+      <p>For demos, store sessions & bookings in <code>localStorage</code>. This is not secure and should only be used for prototypes. Replace with server storage before production.</p>
+
+      <h3>GitHub Pages & Deployment tips</h3>
+      <ul>
+        <li>Place <code>index.html</code> at repo root (or set Pages to <code>/docs</code> in settings). If Pages shows a blank page: check console errors, ensure relative paths (no leading <code>/</code>), and ensure resources are present.</li>
+        <li>If your site is an SPA (routes), either use hash-based routing or add a copy of <code>index.html</code> as <code>404.html</code> to handle refresh navigation.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="security">
+      <h2 id="security">Security, privacy & moderation</h2>
+      <ul>
+        <li>Authentication: use secure server-side password hashing (bcrypt) and JWT sessions or provider auth (Google/Apple).</li>
+        <li>Payments: never store card details on your servers. Use PCI-compliant providers (Stripe/Razorpay) and server-side capture.</li>
+        <li>Privacy: minimal PII for quick onboarding. Provide a privacy policy page and give users data deletion options.</li>
+        <li>Moderation: in-app reporting for sessions & messages, and automated content filters for abusive language. Consider rate-limits + CAPTCHA to prevent spam invites.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="differentiation">
+      <h2 id="differentiation">How Maidaan is different — website experience & offerings</h2>
+
+      <h3>Website Experience (UX & UI differences)</h3>
+      <ul>
+        <li><strong>Community-first flows:</strong> Post & join invites are central (not an afterthought). Many competitors focus mainly on booking and do not make player-matching easy.</li>
+        <li><strong>Transparent pricing:</strong> We show final venue fees without platform-added hidden fees. This reduces friction & complaints.</li>
+        <li><strong>Neon-themed, energetic UI:</strong> High-contrast neon-dark theme with a light-mode alternative — crafted for a sports vibe that still meets accessibility standards.</li>
+        <li><strong>Integrated playlists:</strong> Spotify integration on venue pages — an emotional, experience-driven differentiator that competitors rarely provide.</li>
+        <li><strong>Simple turf onboarding:</strong> Turf owners can register quickly with an onboarding flow and request demos — fewer steps than complex vendor portals.</li>
+      </ul>
+
+      <h3>Service & Offering differences</h3>
+      <ul>
+        <li><strong>Player discovery:</strong> Built-in "Find Players" feed and session-based chat — competitors may list venues but lack seamless player matching.</li>
+        <li><strong>Local community features:</strong> Team-building, recurring match scheduling, neighborhood leaderboards and event aggregation for local leagues.</li>
+        <li><strong>Owner-friendly policies:</strong> Lower commission or subscription models (choose one). Transparent payouts and simple calendar sync.</li>
+        <li><strong>Safety & trust:</strong> Verified turf badges, user reviews & ratings, and the ability for turf owners to moderate or confirm players.</li>
+      </ul>
+
+      <h3>Short comparison (example)</h3>
+      <pre>
+Feature               | Maidaan                         | Typical competitor
+--------------------------------------------------------------------------------
+Player matching       | Yes — central feed + chat        | Rare / limited
+Transparent pricing   | Yes — no hidden fees             | Often unclear, platform fees
+Playlist integration  | Spotify built-in                 | Not offered
+Owner onboarding      | Quick demo + dashboard           | Lengthy onboarding
+Real-time chat        | Planned (WebSocket/Firebase)     | Often none or external groups
+Accessibility         | Strong (ARIA, keyboard flows)    | Varies
+      </pre>
+    </section>
+
+    <section class="card" aria-labelledby="roadmap">
+      <h2 id="roadmap">Roadmap & priorities (recommended)</h2>
+      <ul>
+        <li><strong>MVP (0 - 3 months):</strong> Booking + simple Turf listing, Find Players posting & join, basic chat via Firebase, payments via Stripe/Razorpay sandbox, English + Hindi UI, light/dark mode, accessibility baseline.</li>
+        <li><strong>Next (3 - 6 months):</strong> Turf owner dashboard, repeat bookings, subscription/commission options, better search & map clustering, user verification & reviews.</li>
+        <li><strong>Later (6+ months):</strong> League management, tournaments, API for partners, analytics for turf owners, mobile app (React Native / Flutter).</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="how-to-test">
+      <h2 id="how-to-test">How to test the "Find Players" interactivity (developer -> QA)</h2>
+      <ol>
+        <li>Open the site and sign in with demo account (if implemented) or use anonymous posting.</li>
+        <li>Click <code>+ Post Your Game Invite</code> — ensure modal shows fields: sport, date/time, players required, location.</li>
+        <li>Submit and confirm invite appears immediately in the feed (no refresh).</li>
+        <li>From another browser or incognito, click "Join" — check that a 'request sent' state is visible and a notification appears for the original poster.</li>
+        <li>Open "Chat" — send messages; confirm messages are visible to both sides.</li>
+        <li>Test edge cases: invalid times, duplicate posts, spam protection (rate-limit), and empty fields.</li>
+      </ol>
+      <div class="note">Implementation tip: for a fast demo, use <code>localStorage</code>; for production, use Firestore or Socket.IO + REST API.</div>
+    </section>
+
+    <section class="card" aria-labelledby="team">
+      <h2 id="team">Team & Contacts</h2>
+      <div class="team-grid" role="list">
+        <div class="member" role="listitem">
+          <div class="avatar">AS</div>
+          <strong>Avi Shrivastava</strong>
+          <div class="small">IPM05086 — Lead Developer</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">DG</div>
+          <strong>Dev Ganatra</strong>
+          <div class="small">IPM05191 — UI/UX</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">YH</div>
+          <strong>Yusuf J. Hashmi</strong>
+          <div class="small">IPM05181 — Backend</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">BM</div>
+          <strong>Bhavya Modi</strong>
+          <div class="small">IPM05088 — Product</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">IG</div>
+          <strong>Ishika Gupta</strong>
+          <div class="small">IPM05168 — Data</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">VG</div>
+          <strong>Vansh Gupta</strong>
+          <div class="small">IPM05143 — Mobile</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">KG</div>
+          <strong>Kaustubh Gupta</strong>
+          <div class="small">IPM05176 — QA</div>
+        </div>
+        <div class="member" role="listitem">
+          <div class="avatar">RM</div>
+          <strong>Rekha Mehra</strong>
+          <div class="small">IPM05200 — Community</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <strong>Support / Contact:</strong>
+        <div class="small">Phone: +91 7869606696</div>
+        <div class="small">Email: support@maidaan.example (replace with real)</div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="dev-notes">
+      <h2 id="dev-notes">Developer checklist & quick commands</h2>
+      <ul>
+        <li>Ensure <code>index.html</code> is at repo root for GitHub Pages or configure Pages to use the <code>/pages</code> folder.</li>
+        <li>Use <strong>relative paths</strong> for CSS/JS/images — avoid leading slash <code>/assets/...</code>.</li>
+        <li>To debug blank pages: open browser console (Chrome: <kbd>⌥⌘J</kbd>) and fix 404s & JS errors.</li>
+        <li>Local dev: open <code>index.html</code> directly or use Live Server extension in VS Code to simulate.</li>
+      </ul>
+      <pre>
+git clone <repo>
+code .
+# open index.html or use Live Server extension
+      </pre>
+    </section>
+
+    <div class="confidential">
+      Confidential — share only with teammates. This hidden page summarizes the full product vision, technical approach and testing plan for Maidaan.
+    </div>
+
+    <div class="foot">Access tips: save this file as <code>maidaan-hidden.html</code> in repo root. Do not link this page from public navigation. To protect further, add server-side auth or a password gate.</div>
+  </div>
+
+  <!-- Simple client-side password gate (change password below) -->
+  <script>
+    (function(){
+      const PASSWORD = 'maidaan-secret-2025'; // change as needed
+      // check URL param ?secret=... as convenience
+      const urlParams = new URLSearchParams(location.search);
+      const secretQuery = urlParams.get('secret');
+      const allowed = secretQuery === PASSWORD || sessionStorage.getItem('maidaan_hidden_access') === '1';
+
+      function showContent(){
+        document.getElementById('content').hidden = false;
+      }
+
+      if(allowed){
+        sessionStorage.setItem('maidaan_hidden_access','1');
+        showContent();
+      } else {
+        // ask for password
+        setTimeout(()=> {
+          const p = prompt('Enter password to view Maidaan internal page:');
+          if(p === PASSWORD){
+            sessionStorage.setItem('maidaan_hidden_access','1');
+            showContent();
+          } else {
+            // show minimal message and hide content
+            document.body.innerHTML = '<div style="display:flex;height:100vh;align-items:center;justify-content:center;color:#d3f5e6;background:#050505;font-family:Inter, sans-serif"><div style="max-width:780px;padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)"><h2 style="color:#00ffd1;margin-top:0">Access denied</h2><p style="color:#9aa79a">You need the secret password to view the Maidaan internal page. If you are an authorized team member, please contact the product lead.</p></div></div>';
+          }
+        }, 50);
+      }
+    })();
+  </script>
+</body>
+</html>
