@@ -71,7 +71,7 @@ const Header = () => {
               <span>{t('exploreVenues')}</span>
             </Link>
             <Link 
-              to="/list-your-sports" 
+              to="/venue-registration" 
               className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
             >
               <Building className="w-4 h-4" />
@@ -204,7 +204,7 @@ const Header = () => {
                   <span>{t('exploreVenues')}</span>
                 </Link>
                 <Link 
-                  to="/list-your-sports" 
+                  to="/venue-registration" 
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-card-hover transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >

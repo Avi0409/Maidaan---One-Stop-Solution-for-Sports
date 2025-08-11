@@ -15,14 +15,14 @@ const translations = {
     bookNow: 'Book Now',
     findPlayersNearby: 'Find Players Nearby',
     searchVenuesOrSports: 'Search venues or sports...',
-    listYourSports: 'List Your Sports',
-    exploreVenues: 'Explore Venues',
+    listYourSports: 'List Your Venue',
+    exploreVenues: 'Choose Your Sport',
     postGameInvite: 'Post Your Game Invite',
     
     // Hero Section
-    heroTitle: 'Connect. Play. Win.',
+    heroTitle: 'Connect. Book. Play.',
     heroSubtitle: 'Discover nearby venues, book your perfect time slot, and connect with players in your community.',
-    getStarted: 'Get Started Today',
+    getStarted: 'Enter Your Location',
     
     // Sports
     cricket: 'Cricket',
@@ -143,14 +143,14 @@ const translations = {
     bookNow: 'अभी बुक करें',
     findPlayersNearby: 'पास के खिलाड़ी खोजें',
     searchVenuesOrSports: 'स्थान या खेल खोजें...',
-    listYourSports: 'अपने खेल सूची करें',
-    exploreVenues: 'स्थान देखें',
+    listYourSports: 'अपना स्थान सूची करें',
+    exploreVenues: 'अपना खेल चुनें',
     postGameInvite: 'अपना गेम निमंत्रण पोस्ट करें',
     
     // Hero Section
-    heroTitle: 'जुड़ें। खेलें। जीतें।',
+    heroTitle: 'जुड़ें। बुक करें। खेलें।',
     heroSubtitle: 'आस-पास के स्थान खोजें, अपना सही समय बुक करें, और अपने समुदाय के खिलाड़ियों से जुड़ें।',
-    getStarted: 'आज ही शुरू करें',
+    getStarted: 'अपना स्थान दर्ज करें',
     
     // Sports
     cricket: 'क्रिकेट',

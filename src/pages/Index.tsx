@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ArrowRight, Play, MapPin, Users, Calendar, Music } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SportCard from '@/components/SportCard';
 import { useLanguage } from '@/components/LanguageProvider';
+import { useState } from 'react';
 
 // Import sport images
 import heroBg from '@/assets/hero-bg.jpg';
@@ -17,6 +19,8 @@ import tennisIcon from '@/assets/tennis-icon.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
+  const [selectedSport, setSelectedSport] = useState('all');
+  const [selectedLocation, setSelectedLocation] = useState('mumbai');
 
   const sports = [
     {
@@ -85,22 +89,33 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
               <MapPin className="w-5 h-5 text-white" />
-              <select className="bg-transparent text-white border-none outline-none">
-                <option value="mumbai" className="text-black">Mumbai</option>
-                <option value="delhi" className="text-black">Delhi - NCR</option>
-              </select>
+              <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                <SelectTrigger className="bg-transparent border-none text-white w-48">
+                  <SelectValue placeholder="Enter Your Location" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="mumbai">Mumbai</SelectItem>
+                  <SelectItem value="delhi">Delhi - NCR</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-black neon-border"
-              asChild
-            >
-              <Link to="#sports">
-                <Play className="mr-2 w-5 h-5" />
-                Choose Your Sport
-              </Link>
-            </Button>
+            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <Play className="w-5 h-5 text-white" />
+              <Select value={selectedSport} onValueChange={setSelectedSport}>
+                <SelectTrigger className="bg-transparent border-none text-white w-48">
+                  <SelectValue placeholder="Choose Your Sport" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Sports</SelectItem>
+                  <SelectItem value="cricket">Cricket</SelectItem>
+                  <SelectItem value="football">Football</SelectItem>
+                  <SelectItem value="badminton">Badminton</SelectItem>
+                  <SelectItem value="tennis">Tennis</SelectItem>
+                  <SelectItem value="squash">Squash</SelectItem>
+                  <SelectItem value="pickleball">Pickleball</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
 
@@ -177,7 +192,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-sport rounded-full flex items-center justify-center mx-auto">
                 <Music className="w-8 h-8 text-background" />
               </div>
-              <h3 className="text-xl font-semibold">Curated Playlists</h3>
+              <h3 className="text-xl font-semibold">Spotify Playlists</h3>
               <p className="text-muted-foreground">
                 Enjoy specially curated Spotify playlists while you play
               </p>
@@ -209,12 +224,10 @@ const Index = () => {
               size="lg" 
               variant="outline"
               className="px-8 py-4 text-lg border-background text-background hover:bg-background hover:text-foreground"
-              asChild
+              onClick={() => window.open('https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd', '_blank')}
             >
-              <Link to="/find-players">
-                Find Players
-                <Users className="ml-2 w-5 h-5" />
-              </Link>
+              Spotify Playlists
+              <Music className="ml-2 w-5 h-5" />
             </Button>
           </div>
         </div>
