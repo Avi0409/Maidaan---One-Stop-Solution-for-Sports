@@ -75,33 +75,30 @@ const Index = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto px-4">
-          <h1 className="text-hero text-white neon-glow animate-fade-in">
+          <h1 className="text-hero text-white animate-fade-in">
             {t('heroTitle')}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto animate-fade-in">
-            {t('heroSubtitle')}
+            Connect. Book. Play.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-            <Button 
-              size="lg" 
-              className="px-8 py-4 text-lg neon-border hover-glow bg-primary text-primary-foreground"
-              asChild
-            >
-              <Link to="/book-now">
-                {t('getStarted')}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
+            <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <MapPin className="w-5 h-5 text-white" />
+              <select className="bg-transparent text-white border-none outline-none">
+                <option value="mumbai" className="text-black">Mumbai</option>
+                <option value="delhi" className="text-black">Delhi - NCR</option>
+              </select>
+            </div>
             <Button 
               variant="outline" 
               size="lg" 
               className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-black neon-border"
               asChild
             >
-              <Link to="/venues">
+              <Link to="#sports">
                 <Play className="mr-2 w-5 h-5" />
-                {t('exploreVenues')}
+                Choose Your Sport
               </Link>
             </Button>
           </div>
@@ -116,10 +113,10 @@ const Index = () => {
       </section>
 
       {/* Sports Section */}
-      <section className="py-20 px-4">
+      <section id="sports" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-display mb-6 neon-glow">{t('chooseYourSport')}</h2>
+            <h2 className="text-display mb-6">{t('chooseYourSport')}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Select from our wide range of sports and find the perfect venue for your game
             </p>

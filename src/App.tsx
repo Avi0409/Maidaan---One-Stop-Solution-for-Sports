@@ -14,6 +14,7 @@ import FindPlayers from "./pages/FindPlayers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import SportPage from "./pages/SportPage";
+import VenueDetails from "./pages/VenueDetails";
 import Hidden from "./pages/Hidden";
 import NotFound from "./pages/NotFound";
 
@@ -34,10 +35,11 @@ const App = () => (
               <Route path="/book-now" element={<BookNow />} />
               <Route path="/list-your-sports" element={<ListYourSports />} />
               <Route path="/find-players" element={<FindPlayers />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/sports/:sport" element={<SportPage />} />
-              <Route path="/hidden-admin" element={<Hidden />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/sports/:sport" element={<SportPage />} />
+            <Route path="/venue/:venueId" element={<VenueDetails />} />
+            <Route path="/hidden-admin" element={<Hidden />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

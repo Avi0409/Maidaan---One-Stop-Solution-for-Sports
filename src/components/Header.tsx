@@ -75,7 +75,7 @@ const Header = () => {
               className="flex items-center space-x-1 text-muted-foreground hover:text-primary transition-colors"
             >
               <Building className="w-4 h-4" />
-              <span>{t('listYourSports')}</span>
+              <span>List Your Venue</span>
             </Link>
             <Button 
               variant="outline" 
@@ -209,7 +209,7 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Building className="w-4 h-4" />
-                  <span>{t('listYourSports')}</span>
+                  <span>List Your Venue</span>
                 </Link>
                 <Link 
                   to="/find-players" 

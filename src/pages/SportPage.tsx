@@ -68,6 +68,81 @@ const SportPage = () => {
           description: 'Air-conditioned courts with wooden flooring'
         }
       ]
+    },
+    tennis: {
+      name: 'Tennis',
+      description: 'Master your serve at professional tennis courts with modern amenities.',
+      color: 'sport-tennis',
+      venues: [
+        {
+          id: 5,
+          name: 'Ace Tennis Academy',
+          location: 'Bandra West, Mumbai',
+          price: 1500,
+          rating: 4.7,
+          image: '/api/placeholder/400/250',
+          description: 'Professional clay and hard courts with coaching'
+        },
+        {
+          id: 6,
+          name: 'Court Masters Tennis Club',
+          location: 'Worli, Mumbai',
+          price: 2000,
+          rating: 4.8,
+          image: '/api/placeholder/400/250',
+          description: 'Premium tennis facility with floodlit courts'
+        }
+      ]
+    },
+    squash: {
+      name: 'Squash',
+      description: 'Experience intense squash matches in our glass-walled courts.',
+      color: 'sport-squash',
+      venues: [
+        {
+          id: 7,
+          name: 'Elite Squash Center',
+          location: 'Lower Parel, Mumbai',
+          price: 1200,
+          rating: 4.6,
+          image: '/api/placeholder/400/250',
+          description: 'International standard squash courts with spectator gallery'
+        },
+        {
+          id: 8,
+          name: 'Squash Point Club',
+          location: 'Juhu, Mumbai',
+          price: 1000,
+          rating: 4.5,
+          image: '/api/placeholder/400/250',
+          description: 'Modern squash courts with air conditioning'
+        }
+      ]
+    },
+    pickleball: {
+      name: 'Pickleball',
+      description: 'Join the fastest growing sport at our dedicated pickleball courts.',
+      color: 'sport-pickleball',
+      venues: [
+        {
+          id: 9,
+          name: 'Pickle Palace',
+          location: 'Andheri West, Mumbai',
+          price: 600,
+          rating: 4.4,
+          image: '/api/placeholder/400/250',
+          description: 'Dedicated pickleball courts with equipment rental'
+        },
+        {
+          id: 10,
+          name: 'Court Central Pickleball',
+          location: 'Malad West, Mumbai',
+          price: 800,
+          rating: 4.6,
+          image: '/api/placeholder/400/250',
+          description: 'Premium pickleball facility with coaching programs'
+        }
+      ]
     }
   };
 
@@ -148,11 +223,18 @@ const SportPage = () => {
                     <p className="text-sm text-muted-foreground">{venue.description}</p>
 
                     <div className="flex gap-2 pt-4">
-                      <Button className="flex-1 hover-glow">
+                      <Button 
+                        className="flex-1 hover-glow"
+                        onClick={() => window.open(`/venue/${venue.id}`, '_blank')}
+                      >
                         <Calendar className="w-4 h-4 mr-2" />
                         Book Now
                       </Button>
-                      <Button variant="outline" className="flex-1">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => window.open('/find-players', '_blank')}
+                      >
                         <Users className="w-4 h-4 mr-2" />
                         Find Players
                       </Button>

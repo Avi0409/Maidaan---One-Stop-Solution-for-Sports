@@ -195,11 +195,18 @@ const BookNow = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-2 pt-4">
-                      <Button className="flex-1 hover-glow">
+                      <Button 
+                        className="flex-1 hover-glow"
+                        onClick={() => window.open(`/venue/${venue.id}`, '_blank')}
+                      >
                         <Calendar className="w-4 h-4 mr-2" />
                         {t('bookVenue')}
                       </Button>
-                      <Button variant="outline" className="flex-1">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => window.open('/find-players', '_blank')}
+                      >
                         <Users className="w-4 h-4 mr-2" />
                         {t('findPlayers')}
                       </Button>
