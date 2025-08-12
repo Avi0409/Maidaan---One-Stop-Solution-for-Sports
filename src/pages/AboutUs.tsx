@@ -7,13 +7,13 @@ const AboutUs = () => {
   const { t } = useLanguage();
 
   const teamMembers = [
-    { name: 'Avi Shrivastava', id: 'IPM05086', role: 'Project Lead & Frontend Developer' },
-    { name: 'Bhavya Modi', id: 'IPM05088', role: 'UI/UX Designer & Developer' },
-    { name: 'Ishika Gupta', id: 'IPM05168', role: 'Backend Developer' },
-    { name: 'Vansh Gupta', id: 'IPM05143', role: 'Full Stack Developer' },
-    { name: 'Dev Ganatra', id: 'IPM05191', role: 'Database Architect' },
-    { name: 'Kaustubh Gupta', id: 'IPM05176', role: 'DevOps & Security' },
-    { name: 'Yusuf Jameel Hashmi', id: 'IPM05181', role: 'Quality Assurance & Testing' },
+    { name: 'Avi Shrivastava', id: 'IPM05086', role: 'Project Lead & Frontend Developer', linkedin: 'https://linkedin.com/in/avi-shrivastava' },
+    { name: 'Bhavya Modi', id: 'IPM05088', role: 'UI/UX Designer & Developer', linkedin: 'https://linkedin.com/in/bhavya-modi' },
+    { name: 'Ishika Gupta', id: 'IPM05168', role: 'Backend Developer', linkedin: 'https://linkedin.com/in/ishika-gupta' },
+    { name: 'Vansh Gupta', id: 'IPM05143', role: 'Full Stack Developer', linkedin: 'https://linkedin.com/in/vansh-gupta' },
+    { name: 'Dev Ganatra', id: 'IPM05191', role: 'Database Architect', linkedin: 'https://linkedin.com/in/dev-ganatra' },
+    { name: 'Kaustubh Gupta', id: 'IPM05176', role: 'DevOps & Security', linkedin: 'https://linkedin.com/in/kaustubh-gupta' },
+    { name: 'Yusuf Jameel Hashmi', id: 'IPM05181', role: 'Quality Assurance & Testing', linkedin: 'https://linkedin.com/in/yusuf-jameel-hashmi' },
   ];
 
   return (
@@ -82,8 +82,9 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <div 
                 key={member.id} 
-                className="bg-card rounded-xl p-6 text-center hover-lift neon-border animate-fade-in"
+                className="bg-card rounded-xl p-6 text-center hover-lift cursor-pointer animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => window.open(member.linkedin, '_blank')}
               >
                 <div className="w-20 h-20 bg-gradient-neon rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-background">

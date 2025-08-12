@@ -7,6 +7,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/components/LanguageProvider';
 
+// Import backdrop images
+import cricketBackdrop from '@/assets/cricket-venue-backdrop.jpg';
+import footballBackdrop from '@/assets/football-venue-backdrop.jpg';
+import badmintonBackdrop from '@/assets/badminton-venue-backdrop.jpg';
+import tennisBackdrop from '@/assets/tennis-venue-backdrop.jpg';
+import squashBackdrop from '@/assets/squash-venue-backdrop.jpg';
+import pickleballBackdrop from '@/assets/pickleball-venue-backdrop.jpg';
+
 const SportPage = () => {
   const { sport } = useParams<{ sport: string }>();
   const { t } = useLanguage();
@@ -23,7 +31,7 @@ const SportPage = () => {
           location: 'Oval Maidan, Mumbai',
           price: 2500,
           rating: 4.8,
-          image: '/api/placeholder/400/250',
+          image: cricketBackdrop,
           description: 'Professional cricket ground with international standards'
         },
         {
@@ -32,7 +40,7 @@ const SportPage = () => {
           location: 'Shivaji Park, Mumbai',
           price: 3000,
           rating: 4.9,
-          image: '/api/placeholder/400/250',
+          image: cricketBackdrop,
           description: 'Premium cricket facility with coaching available'
         }
       ]
@@ -48,7 +56,7 @@ const SportPage = () => {
           location: 'Andheri East, Mumbai',
           price: 3500,
           rating: 4.7,
-          image: '/api/placeholder/400/250',
+          image: footballBackdrop,
           description: 'FIFA standard football turf with professional lighting'
         }
       ]
@@ -64,7 +72,7 @@ const SportPage = () => {
           location: 'Powai, Mumbai',
           price: 800,
           rating: 4.6,
-          image: '/api/placeholder/400/250',
+          image: badmintonBackdrop,
           description: 'Air-conditioned courts with wooden flooring'
         }
       ]
@@ -80,7 +88,7 @@ const SportPage = () => {
           location: 'Bandra West, Mumbai',
           price: 1500,
           rating: 4.7,
-          image: '/api/placeholder/400/250',
+          image: tennisBackdrop,
           description: 'Professional clay and hard courts with coaching'
         },
         {
@@ -89,7 +97,7 @@ const SportPage = () => {
           location: 'Worli, Mumbai',
           price: 2000,
           rating: 4.8,
-          image: '/api/placeholder/400/250',
+          image: tennisBackdrop,
           description: 'Premium tennis facility with floodlit courts'
         }
       ]
@@ -105,7 +113,7 @@ const SportPage = () => {
           location: 'Lower Parel, Mumbai',
           price: 1200,
           rating: 4.6,
-          image: '/api/placeholder/400/250',
+          image: squashBackdrop,
           description: 'International standard squash courts with spectator gallery'
         },
         {
@@ -114,7 +122,7 @@ const SportPage = () => {
           location: 'Juhu, Mumbai',
           price: 1000,
           rating: 4.5,
-          image: '/api/placeholder/400/250',
+          image: squashBackdrop,
           description: 'Modern squash courts with air conditioning'
         }
       ]
@@ -130,7 +138,7 @@ const SportPage = () => {
           location: 'Andheri West, Mumbai',
           price: 600,
           rating: 4.4,
-          image: '/api/placeholder/400/250',
+          image: pickleballBackdrop,
           description: 'Dedicated pickleball courts with equipment rental'
         },
         {
@@ -139,7 +147,7 @@ const SportPage = () => {
           location: 'Malad West, Mumbai',
           price: 800,
           rating: 4.6,
-          image: '/api/placeholder/400/250',
+          image: pickleballBackdrop,
           description: 'Premium pickleball facility with coaching programs'
         }
       ]

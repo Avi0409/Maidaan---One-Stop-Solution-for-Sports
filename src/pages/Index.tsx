@@ -5,8 +5,10 @@ import { ArrowRight, Play, MapPin, Users, Calendar, Music } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SportCard from '@/components/SportCard';
+import TextToSpeech from '@/components/TextToSpeech';
 import { useLanguage } from '@/components/LanguageProvider';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Import sport images
 import heroBg from '@/assets/hero-bg.jpg';
@@ -19,8 +21,15 @@ import tennisIcon from '@/assets/tennis-icon.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [selectedSport, setSelectedSport] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('mumbai');
+
+  const handleGoClick = () => {
+    if (selectedSport !== 'all') {
+      navigate(`/sports/${selectedSport}`);
+    }
+  };
 
   const sports = [
     {
@@ -91,7 +100,7 @@ const Index = () => {
               <MapPin className="w-5 h-5 text-white" />
               <Select value={selectedLocation} onValueChange={setSelectedLocation}>
                 <SelectTrigger className="bg-transparent border-none text-white w-48">
-                  <SelectValue placeholder="Enter Your Location" />
+                  <SelectValue placeholder={t('getStarted')} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="mumbai">Mumbai</SelectItem>
@@ -103,19 +112,27 @@ const Index = () => {
               <Play className="w-5 h-5 text-white" />
               <Select value={selectedSport} onValueChange={setSelectedSport}>
                 <SelectTrigger className="bg-transparent border-none text-white w-48">
-                  <SelectValue placeholder="Choose Your Sport" />
+                  <SelectValue placeholder={t('chooseYourSport')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Sports</SelectItem>
-                  <SelectItem value="cricket">Cricket</SelectItem>
-                  <SelectItem value="football">Football</SelectItem>
-                  <SelectItem value="badminton">Badminton</SelectItem>
-                  <SelectItem value="tennis">Tennis</SelectItem>
-                  <SelectItem value="squash">Squash</SelectItem>
-                  <SelectItem value="pickleball">Pickleball</SelectItem>
+                  <SelectItem value="all">{t('chooseYourSport')}</SelectItem>
+                  <SelectItem value="cricket">{t('cricket')}</SelectItem>
+                  <SelectItem value="football">{t('football')}</SelectItem>
+                  <SelectItem value="badminton">{t('badminton')}</SelectItem>
+                  <SelectItem value="tennis">{t('tennis')}</SelectItem>
+                  <SelectItem value="squash">{t('squash')}</SelectItem>
+                  <SelectItem value="pickleball">{t('pickleball')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
+            <Button 
+              onClick={handleGoClick}
+              disabled={selectedSport === 'all'}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg"
+            >
+              {t('go')}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
 
@@ -204,9 +221,9 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-neon">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-display text-background mb-6">Ready to Start Playing?</h2>
+          <h2 className="text-display text-background mb-6">{t('readyToStartPlaying')}</h2>
           <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of sports enthusiasts who trust Maidaan for their venue booking needs
+            {t('heroSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -216,7 +233,7 @@ const Index = () => {
               asChild
             >
               <Link to="/book-now">
-                Book a Venue Now
+                {t('bookVenue')}
                 <Calendar className="ml-2 w-5 h-5" />
               </Link>
             </Button>
@@ -224,16 +241,19 @@ const Index = () => {
               size="lg" 
               variant="outline"
               className="px-8 py-4 text-lg border-background text-background hover:bg-background hover:text-foreground"
-              onClick={() => window.open('https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd', '_blank')}
+              asChild
             >
-              Spotify Playlists
-              <Music className="ml-2 w-5 h-5" />
+              <Link to="/spotify-playlists">
+                {t('spotifyPlaylists')}
+                <Music className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
       <Footer />
+      <TextToSpeech />
     </div>
   );
 };

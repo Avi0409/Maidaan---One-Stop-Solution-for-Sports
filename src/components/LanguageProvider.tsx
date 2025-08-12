@@ -136,6 +136,13 @@ const translations = {
     toggleMenu: 'Toggle menu',
     closeModal: 'Close modal',
     openModal: 'Open modal',
+    readAloud: 'Read Aloud',
+    stopReading: 'Stop Reading',
+    
+    // New features
+    go: 'Go',
+    spotifyPlaylists: 'Spotify Playlists',
+    readyToStartPlaying: 'Ready to Start Playing?',
   },
   hi: {
     // Header
@@ -264,6 +271,13 @@ const translations = {
     toggleMenu: 'मेनू टॉगल करें',
     closeModal: 'मॉडल बंद करें',
     openModal: 'मॉडल खोलें',
+    readAloud: 'ज़ोर से पढ़ें',
+    stopReading: 'पढ़ना बंद करें',
+    
+    // New features
+    go: 'जाएं',
+    spotifyPlaylists: 'स्पॉटिफाई प्लेलिस्ट',
+    readyToStartPlaying: 'खेलना शुरू करने के लिए तैयार हैं?',
   },
 };
 
