@@ -17,6 +17,7 @@ import SportPage from "./pages/SportPage";
 import VenueDetails from "./pages/VenueDetails";
 import VenueRegistration from "./pages/VenueRegistration";
 import SpotifyPlaylists from "./pages/SpotifyPlaylists";
+import SearchResults from "./pages/SearchResults";
 import Hidden from "./pages/Hidden";
 import NotFound from "./pages/NotFound";
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/venue/:venueId" element={<VenueDetails />} />
             <Route path="/venue-registration" element={<VenueRegistration />} />
             <Route path="/spotify-playlists" element={<SpotifyPlaylists />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/hidden-admin" element={<Hidden />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
