@@ -7,13 +7,13 @@ const AboutUs = () => {
   const { t } = useLanguage();
 
   const teamMembers = [
-    { name: 'Avi Shrivastava', id: 'IPM05086', role: 'Project Lead & Frontend Developer', linkedin: 'https://linkedin.com/in/avi-shrivastava' },
-    { name: 'Bhavya Modi', id: 'IPM05088', role: 'UI/UX Designer & Developer', linkedin: 'https://linkedin.com/in/bhavya-modi' },
-    { name: 'Ishika Gupta', id: 'IPM05168', role: 'Backend Developer', linkedin: 'https://linkedin.com/in/ishika-gupta' },
-    { name: 'Vansh Gupta', id: 'IPM05143', role: 'Full Stack Developer', linkedin: 'https://linkedin.com/in/vansh-gupta' },
-    { name: 'Dev Ganatra', id: 'IPM05191', role: 'Database Architect', linkedin: 'https://linkedin.com/in/dev-ganatra' },
-    { name: 'Kaustubh Gupta', id: 'IPM05176', role: 'DevOps & Security', linkedin: 'https://linkedin.com/in/kaustubh-gupta' },
-    { name: 'Yusuf Jameel Hashmi', id: 'IPM05181', role: 'Quality Assurance & Testing', linkedin: 'https://linkedin.com/in/yusuf-jameel-hashmi' },
+    { name: 'Avi Shrivastava', id: 'IPM05086', role: 'Project Lead & Frontend Developer', linkedin: 'https://www.linkedin.com/in/avi-shrivastava-0764b7264' },
+    { name: 'Bhavya Modi', id: 'IPM05088', role: 'UI/UX Designer & Developer', linkedin: 'https://www.linkedin.com/in/bhavyamodi777/' },
+    { name: 'Dev Ganatra', id: 'IPM05191', role: 'Database Architect', linkedin: 'https://www.linkedin.com/in/dev-ganatra-17a776287/' },
+    { name: 'Ishika Gupta', id: 'IPM05168', role: 'Backend Developer', linkedin: 'https://www.linkedin.com/in/ishikagupta4/' },
+    { name: 'Vansh Gupta', id: 'IPM05143', role: 'Full Stack Developer', linkedin: 'https://www.linkedin.com/in/vansh-gupta-6332732a3/' },
+    { name: 'Kaustubh Gupta', id: 'IPM05176', role: 'DevOps & Security', linkedin: 'https://www.linkedin.com/in/kaustubh-gupta2005/' },
+    { name: 'Yusuf Jameel Hashmi', id: 'IPM06181', role: 'Quality Assurance & Testing', linkedin: 'https://www.linkedin.com/in/yusufjhashmi/' },
   ];
 
   return (
