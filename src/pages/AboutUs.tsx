@@ -13,7 +13,7 @@ const AboutUs = () => {
     { name: 'Ishika Gupta', id: 'IPM05168', role: 'Backend Developer', linkedin: 'https://www.linkedin.com/in/ishikagupta4/' },
     { name: 'Vansh Gupta', id: 'IPM05143', role: 'Full Stack Developer', linkedin: 'https://www.linkedin.com/in/vansh-gupta-6332732a3/' },
     { name: 'Kaustubh Gupta', id: 'IPM05176', role: 'DevOps & Security', linkedin: 'https://www.linkedin.com/in/kaustubh-gupta2005/' },
-    { name: 'Yusuf Jameel Hashmi', id: 'IPM06181', role: 'Quality Assurance & Testing', linkedin: 'https://www.linkedin.com/in/yusufjhashmi/' },
+    { name: 'Yusuf Jameel Hashmi', id: 'IPM05181', role: 'Quality Assurance & Testing', linkedin: 'https://www.linkedin.com/in/yusufjhashmi/' },
   ];
 
   return (
